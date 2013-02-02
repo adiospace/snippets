@@ -1,11 +1,16 @@
-snippet :f "Object Method" !
+snippet :f "Object Method (:f)" !
 ${1:methodName}: function($2){
 	${0:// body...}
 }${10:,}
 endsnippet
 
-snippet : "Object Key Value"
+snippet : "Object Key Value (:)" !b
 ${1:key}: ${2:value}
+endsnippet
+
+snippet :, "Object Key Value (:,)" !b
+${1:key}: ${2:value},
+$0
 endsnippet
 
 snippet proto "Prototype (proto)" !b
@@ -21,7 +26,13 @@ function ${1:name}($2) {
 endsnippet
 
 snippet funv "function expression (funv)" !
-var ${1:varName} = function${2: funName}($3) { 
+var ${1:varName} = function($2) { 
+	${0:// body...}
+}${10:;}
+endsnippet
+
+snippet funn "named function expression (funn)" !
+var ${1:varName} = function${2: $1}($3) { 
 	${0:// body...}
 }${10:;}
 endsnippet
@@ -54,4 +65,19 @@ if (${1:condition}) {
 } else {
 	${0:// code...}
 }
+endsnippet
+
+
+snippet rt "return this (rt)" !b
+return this;
+endsnippet
+
+snippet ro "return object (ro)" !b
+return {
+  ${0:// code...}
+};
+endsnippet
+
+snippet this= "save ref to this (this)" !i
+_this = this${0:;}
 endsnippet
