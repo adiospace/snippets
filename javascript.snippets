@@ -14,16 +14,26 @@ ${1:Constructor}.prototype.${2:methodName} = function($3) {
 }
 endsnippet
    
-snippet fun "function (fun)" !b
+snippet fun "function declaration (fun)" !b
 function ${1:name}($2) {
 	${0:// body...}
 }
 endsnippet
 
-snippet funa "anonymous function (funa)" !
+snippet funv "function expression (funv)" !
+var ${1:varName} = function${2: funName}($3) { 
+	${0:// body...}
+}${10:;}
+endsnippet
+
+snippet funa "anonymous function (funa)" !i
 function($1) {
 	${0:// body...}
-}
+}${10:;}
+endsnippet
+
+snippet funi "inline anonymous function (funi)" !i
+function($1) { ${0:/* body...*/} }${10:;}
 endsnippet
 
 snippet for "for" !b
